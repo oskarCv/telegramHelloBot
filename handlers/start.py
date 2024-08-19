@@ -4,6 +4,7 @@ from aiogram.filters import Command
 
 start_router = Router()
 
+# Define the command handler
 @start_router.message(Command(commands="start"))
 async def start_command_handler(message: Message):
     await message.answer(

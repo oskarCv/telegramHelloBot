@@ -1,5 +1,5 @@
 import asyncio
-import boto3
+import boto3 # Require for aws
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import BotCommand
@@ -7,8 +7,11 @@ from aiogram.types import BotCommand
 from handlers.start import start_router
 from handlers.subscribe import subscribe_router
 
-ssm = boto3.client('ssm', region_name='us-east-2')
+ssm = boto3.client('ssm', region_name='us-east-2') #required for aws
 BOT_TOKEN = ssm.get_parameter(Name='TELEGRAM_TOKEN', WithDecryption=True)['Parameter']['Value']
+
+#for local testing
+# BOT_TOKEN = "toke goes here"
 
 async def main():
     bot = Bot(token=BOT_TOKEN)
