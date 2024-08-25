@@ -7,11 +7,11 @@ from aiogram.types import BotCommand
 from handlers.start import start_router
 from handlers.subscribe import subscribe_router
 
-ssm = boto3.client('ssm', region_name='us-east-2') #required for aws
-BOT_TOKEN = ssm.get_parameter(Name='TELEGRAM_TOKEN', WithDecryption=True)['Parameter']['Value']
+# ssm = boto3.client('ssm', region_name='us-east-2') #required for aws
+# BOT_TOKEN = ssm.get_parameter(Name='TELEGRAM_TOKEN', WithDecryption=True)['Parameter']['Value']
 
 #for local testing
-# BOT_TOKEN = "toke goes here"
+BOT_TOKEN = "7304825986:AAGMWx-CzT1RuIEIlRcouXQ-ur_a059Zg8M"
 
 async def main():
     bot = Bot(token=BOT_TOKEN)
