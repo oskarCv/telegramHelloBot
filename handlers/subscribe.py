@@ -6,7 +6,7 @@ subscribe_router = Router()
 
 @subscribe_router.message(Command(commands='subscribe'))
 async def subscribe_handler(message: Message):
-    web_app = WebAppInfo(url="https://oskarcv.github.io/sample-gh-pages/")
+    web_app = WebAppInfo(url="https://app.tokencompass.info/")
     button = InlineKeyboardButton(text="Subscribe", web_app=web_app)
     keyboard = InlineKeyboardMarkup(inline_keyboard=[[button]])
 
